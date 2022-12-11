@@ -27,10 +27,11 @@ jobs:
 
     # Generates the snake  
       - uses: Platane/snk@master
-        id: snake-gif
         with:
-          github_user_name: YuriSilv
-          # these next 2 lines generate the files on a branch called "output". This keeps the main branch from cluttering up.
+          # github user name to read the contribution graph from (**required**)
+          # using action context var `github.repository_owner` or specified user
+          github_user_name: ${{ github.YuriSilv }}
+
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
